@@ -1,0 +1,11 @@
+.logoImg{
+  width: 150px;
+}
+
+[data-bs-theme="light"] header, 
+[data-bs-theme="light"] footer {
+    background-color: #378cb1;
+    color: #f5f5f5;
+    --bs-body-color: #f5f5f5
+    --bs-border-color: #f5f5f5;
+}
