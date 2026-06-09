@@ -1,0 +1,17 @@
+.titlePage{
+  font-weight: 700;
+  color: #173b4b;
+}
+.subtitlePage{
+ color: #7C7C7C;
+ font-weight: 700;
+}
+
+[data-bs-theme="light"] h2 {
+  font-weight: 700;
+ color: #378cb1;
+}
+
+#osDescripition {
+  resize: none;
+}
