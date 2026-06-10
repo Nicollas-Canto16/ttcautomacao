@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../shared/global.css" />
     <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
@@ -110,9 +115,9 @@
           </div>
         </div>
       </div>
-      <div class="row border border-2 p-3 rounded-4 mb-5">
-        <h2 class="pb-3">Dados do cliente</h2>
-        <form class="" action="">
+      <form class="" id="client_os_form" action="envio_dados.php" method="post">
+        <div class="row border border-2 p-3 rounded-4 mb-5">
+          <h2 class="pb-3">Dados do cliente</h2>
           <div class="row pb-3">
             <div class="col">
               <label for="name">Nome do responsável*</label>
@@ -169,16 +174,10 @@
           </div>
           <div class="row d-flex justify-content-between">
             <div class="col-3">
-              <label for="select">Tipo de documento*</label>
-              <select
-                class="form-select"
-                aria-label="Default select example"
-                id="select"
-                name="select"
-              >
-                <option selected>Cnpj</option>
-                <option value="1">Cnpj</option>
-                <option value="2">Cpf</option>
+              <label for="typeDocument">Tipo de documento*</label>
+              <select class="form-select" id="typeDocument" name="typeDocument">
+                <option  value="cnpj" selected>Cnpj</option>
+                <option value="cpf">Cpf</option>
               </select>
             </div>
             <div class="col-6">
@@ -187,29 +186,22 @@
                 type="text"
                 class="form-control"
                 placeholder="00.000.000/0000-00"
-                name="cpnj"
-                id="cnpj"
+                name="document"
+                id="document"
               />
             </div>
           </div>
-        </form>
-      </div>
-      <div class="row border border-2 p-3 rounded-4">
-        <h2 class="pb-3">Ordem de Serviço</h2>
-        <form class="" action="">
+        </div>
+
+        <div class="row border border-2 p-3 rounded-4">
+          <h2 class="pb-3">Ordem de Serviço</h2>
           <div class="row pb-3">
             <div class="col-3">
               <label for="status">Status*</label>
-              <select
-                class="form-select"
-                aria-label="Default select example"
-                id="status"
-                name="status"
-              >
-                <option selected>Pendente</option>
-                <option value="1">Pendente</option>
-                <option value="2">Concluído</option>
-                <option value="3">Em andamento</option>
+              <select class="form-select" id="status" name="status">
+                <option value="pendente"selected>Pendente</option>
+                <option value="concluido">Concluído</option>
+                <option value="emAndamento">Em andamento</option>
               </select>
             </div>
           </div>
@@ -226,14 +218,16 @@
               required
             ></textarea>
           </div>
-        </form>
-      </div>
-      <div class="row pt-5">
-        <div class="col d-flex justify-content-end">
-          <button class="btn btn-secondary me-3">Cancelar</button>
-          <button class="btn btn-primary">Salvar cliente</button>
         </div>
-      </div>
+        <div class="row pt-5">
+          <div class="col d-flex justify-content-end">
+            <button class="btn btn-secondary me-3">Cancelar</button>
+            <button type="submit" class="btn btn-primary">
+              Salvar cliente
+            </button>
+          </div>
+        </div>
+      </form>
     </main>
   </body>
 
@@ -242,5 +236,9 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
   ></script>
+   <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
   <script src="./script.js"></script>
 </html>
