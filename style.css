@@ -1,11 +1,11 @@
 [data-bs-theme="light"] h1,
-[data-bs-theme="light"] h2{
-  font-weight:700 !important;
-  color: #2C2C2C;
+[data-bs-theme="light"] h2 {
+  font-weight: 700 !important;
+  color: #2c2c2c;
 }
 
-[data-bs-theme="light"] .text{
-  color: #2C2C2C;
+[data-bs-theme="light"] .text {
+  color: #2c2c2c;
 }
 
 .maquinaImg {
@@ -28,13 +28,6 @@
 [data-bs-theme="light"] form {
   border: solid 2px #dee2e6;
 }
-
-[data-bs-theme="light"] .form-control:focus {
-  border-color: #378cb1;
-  box-shadow: 0 0 0 0.25rem rgba(55, 140, 177, 0.25);
-}
-
-
 
 .underlineTitle {
   width: 100%;

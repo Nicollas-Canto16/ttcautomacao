@@ -1,17 +1,27 @@
-.titlePage{
+.titlePage {
   font-weight: 700;
   color: #173b4b;
 }
-.subtitlePage{
- color: #7C7C7C;
- font-weight: 700;
+.subtitlePage {
+  color: #7c7c7c;
+  font-weight: 700;
 }
 
 [data-bs-theme="light"] h2 {
   font-weight: 700;
- color: #378cb1;
+  color: #378cb1;
 }
 
 #osDescripition {
   resize: none;
 }
+
+[data-bs-theme="light"] a {
+  color: #173b4b;
+}
+
+[data-bs-theme="light"] a:hover {
+  background-color: #173b4b;
+  color: #f5f5f5;
+}
+

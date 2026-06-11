@@ -1,20 +1,19 @@
 @font-face {
-    font-family: "Montserrat";
-    src: url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
 
-
 :root {
-    --bs-body-font-family: "Montserrat", sans-serif !important  ;
+  --bs-body-font-family: "Montserrat", sans-serif !important  ;
 }
 
 .logoImg {
@@ -49,7 +48,7 @@
 }
 
 [data-bs-theme="light"] .btn-secondary {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   color: #7c7c7c;
   --bs-btn-border-color: #7c7c7c;
   --bs-btn-hover-bg: #378cb1;
@@ -62,6 +61,18 @@
   text-decoration: none;
   font-size: 1.5rem;
 }
+
 [data-bs-theme="light"] a:hover {
   background-color: #173b4b;
+  color: #f5f5f5;
+}
+
+[data-bs-theme="light"] .form-control:focus {
+  border-color: #378cb1;
+  box-shadow: 0 0 0 0.25rem rgba(55, 140, 177, 0.25);
+}
+
+[data-bs-theme="light"] .form-select:focus {
+  border-color: #378cb1;
+  box-shadow: 0 0 0 0.25rem rgba(55, 140, 177, 0.25);
 }
