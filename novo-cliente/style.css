@@ -1,35 +1,19 @@
-[data-bs-theme="light"] h1,
+[data-bs-theme="light"] .titlePage {
+  font-weight: 700;
+  color: #173b4b;
+}
+
+.subtitlePage {
+  color: #7c7c7c;
+  font-weight: 700;
+}
+
 [data-bs-theme="light"] h2 {
-  font-weight: 700 !important;
-  color: #2c2c2c;
+  font-weight: 700;
+  color: #378cb1;
 }
 
-[data-bs-theme="light"] .text {
-  color: #2c2c2c;
-}
-
-.maquinaImg {
-  width: 18.75rem;
-}
-
-.maquinaImg2 {
-  height: 12.5rem;
-}
-
-.maquinaImg3 {
-  height: 12.5rem;
-}
-
-[data-bs-theme="light"] a {
-  color: #f5f5f5;
-  text-decoration: none;
-}
-
-[data-bs-theme="light"] form {
-  border: solid 2px #dee2e6;
-}
-
-#emailBody {
+#osDescripition {
   resize: none;
 }
 
@@ -46,14 +30,25 @@
   border-radius: 50%;
   transition: 0.2s;
 }
+
 .theme-toggle-btn:focus,
 .theme-toggle-btn:active {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
+
 .theme-toggle-btn:hover {
   background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-bs-theme="light"] a {
+  color: #173b4b;
+}
+
+[data-bs-theme="light"] a:hover {
+  background-color: #173b4b;
+  color: #f5f5f5;
 }
 
 [data-bs-theme="dark"] body {

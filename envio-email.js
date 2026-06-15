@@ -15,29 +15,27 @@ document
     const serviceId = "service_bdvuekq";
     const teamplateId = "template_rpk9nhu";
 
-    emailjs.send(serviceId, teamplateId, formData).then(() => {
-      Toastify({
-        text: "E-mail enviado com sucesso!",
-        duration: 3000,
-        style:{
-            background: "#378cb1",
-            color:"#f4f4f4"
-        }
-
-      }).showToast();
-       document.getElementById("orcamentoForm").reset();
-    })
-    .catch((error)=>{
+    emailjs
+      .send(serviceId, teamplateId, formData)
+      .then(() => {
         Toastify({
-        text: "Erro ao enviar e-mail!",
-        duration: 3000,
-        style:{
+          text: "E-mail enviado com sucesso!",
+          duration: 3000,
+          style: {
+            background: "#378cb1",
+            color: "#f4f4f4",
+          },
+        }).showToast();
+        document.getElementById("orcamentoForm").reset();
+      })
+      .catch((error) => {
+        Toastify({
+          text: "Erro ao enviar e-mail!",
+          duration: 3000,
+          style: {
             backgRound: "#dc3545",
-            color:"#f4f4f4"
-        }
-
-      }).showToast();
-    })
-
-   
+            color: "#f4f4f4",
+          },
+        }).showToast();
+      });
   });

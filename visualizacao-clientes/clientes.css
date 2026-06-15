@@ -1,0 +1,124 @@
+
+.clientes-search-bar {
+  background-color: var(--bs-secondary-bg);
+  border: 1px solid var(--bs-border-color);
+}
+
+/* --- Tabela --- */
+.clientes-table {
+  border-color: var(--bs-border-color);
+}
+
+/* Cabeçalho da tabela */
+.clientes-th {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-border-color);
+}
+
+/* Badge CPF/CNPJ */
+.clientes-badge {
+  font-size: 0.7rem;
+}
+
+.theme-toggle-btn {
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.theme-toggle-btn:focus,
+.theme-toggle-btn:active {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* --- Light mode --- */
+[data-bs-theme="light"] .clientes-search-bar {
+  background-color: #f5f5f5;
+  border-color: #2c2c2c;
+}
+
+[data-bs-theme="light"] .clientes-th {
+  background-color: #bebebe;
+  border-color: #2c2c2c;
+  color: #2c2c2c;
+}
+
+[data-bs-theme="light"] .clientes-table {
+  border-color: #2c2c2c;
+}
+
+[data-bs-theme="light"] .clientes-table td {
+  border-color: #2c2c2c;
+}
+
+[data-bs-theme="light"] .clientes-badge {
+  background-color: #173b4b;
+  color: #f5f5f5;
+}
+
+/* --- Dark mode --- */
+[data-bs-theme="dark"] .clientes-search-bar {
+  background-color: #3a3a3a;
+  border-color: #d3d3d3;
+}
+
+[data-bs-theme="dark"] .clientes-th {
+  background-color: #333333;
+  border-color: #d3d3d3;
+  color: #d3d3d3;
+}
+
+[data-bs-theme="dark"] .clientes-table {
+  border-color: #d3d3d3;
+}
+
+[data-bs-theme="dark"] .clientes-table td {
+  border-color: #d3d3d3;
+}
+
+[data-bs-theme="dark"] .clientes-badge {
+  background-color: #378cb1;
+  color: #f5f5f5;
+}
+
+[data-bs-theme="dark"] a{
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+[data-bs-theme="dark"] .bg-primary {
+  background-color: #242424 !important;
+}
+[data-bs-theme="dark"] .bg-secondary {
+  background-color: #242424 !important;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  background-color: #378cb1;
+  color: #f5f5f5;
+  --bs-btn-border-color: #378cb1;
+  --bs-btn-hover-bg: #173b4b;
+  --bs-btn-hover-border-color: #173b4b;
+  --bs-btn-active-bg: #173b4b;
+}
+
+[data-bs-theme="dark"] header{
+  background-color: #0a2e3f !important;
+  color: #f0f3f8;
+  border-bottom: 1px solid #2c4b5e;
+    font-size: 1.5rem;
+}
