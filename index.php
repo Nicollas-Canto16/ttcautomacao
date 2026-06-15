@@ -5,8 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TTC Assessoria e Automação Industrial</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="./shared/global.css" />
   <script
     type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -19,6 +17,9 @@
     rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
     crossorigin="anonymous" />
+  <link rel="stylesheet" href="./shared/global.css" />
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body class="m-0 p-0">
@@ -39,8 +40,20 @@
         <a class="headerLink rounded-4 p-1 a" href="#orcamento">Orçamento </a>
       </div>
       <div class="col d-flex justify-content-end align-items-center pe-5">
-        <a class="me-3 rounded-4 p-2 d-flex a" href="">
+        <button id="themeToggleBtn" class="theme-toggle-btn rounded-circle p-2 d-flex">
+          <svg id="themeIconSun" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
           <svg
+            id="themeIconMoon"
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"
@@ -54,8 +67,8 @@
             <path
               d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
           </svg>
-        </a>
-        <a class="rounded-4 p-2 d-flex a" href="./novo-cliente/novo-cliente.php">
+        </button>
+        <a class="rounded-4 p-2 d-flex a" href="./login/login.php">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -365,7 +378,42 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="envio-email.js"></script>
+  <script>
+    function setTheme(theme) {
+      const html = document.documentElement;
+      html.setAttribute("data-bs-theme", theme);
+      localStorage.setItem("ttc_theme", theme);
+      const sunIcon = document.getElementById("themeIconSun");
+      const moonIcon = document.getElementById("themeIconMoon");
+      if (theme === "dark") {
+        if (sunIcon) sunIcon.style.display = "none";
+        if (moonIcon) moonIcon.style.display = "inline-block";
+      } else {
+        if (sunIcon) sunIcon.style.display = "inline-block";
+        if (moonIcon) moonIcon.style.display = "none";
+      }
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-bs-theme");
+      const newTheme = current === "light" ? "dark" : "light";
+      setTheme(newTheme);
+    }
+
+    const savedTheme = localStorage.getItem("ttc_theme");
+    if (savedTheme === "dark" || savedTheme === "light") setTheme(savedTheme);
+    else setTheme("light");
+    document.getElementById("themeToggleBtn")?.addEventListener("click", toggleTheme);
+
+    window.togglePassword = function(inputId) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      const type = input.type === "password" ? "text" : "password";
+      input.type = type;
+    };
+  </script>
+
 </body>
 
 </html>

@@ -29,13 +29,126 @@
   border: solid 2px #dee2e6;
 }
 
-.underlineTitle {
-  width: 100%;
-  height: 0.25rem;
-  background: linear-gradient(to right, #173b4b, #378cb1);
-  border-radius: 25px;
-}
-
 #emailBody {
   resize: none;
+}
+
+.theme-toggle-btn {
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.theme-toggle-btn:focus,
+.theme-toggle-btn:active {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-bs-theme="dark"] body {
+  background-color: #0f0f12 !important;
+  color: #eef2ff;
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+}
+[data-bs-theme="dark"] header,
+[data-bs-theme="dark"] footer{
+  background-color: #0a2e3f !important;
+  color: #f0f3f8;
+  border-bottom: 1px solid #2c4b5e;
+}
+[data-bs-theme="dark"] .headerLink {
+  color: #f0f3f8;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+[data-bs-theme="dark"] a:hover {
+  background-color: #1f5a72;
+  border-radius: 1rem;
+}
+[data-bs-theme="dark"] .logoImg {
+  filter: brightness(0) invert(1);
+}
+[data-bs-theme="dark"] .btn-custom-primary {
+  background-color: #2c7a9e;
+  color: white;
+  border: none;
+}
+[data-bs-theme="dark"] .btn-custom-primary:hover {
+  background-color: #1f5a72;
+}
+[data-bs-theme="dark"] .card-auth {
+  background-color: #18181f !important;
+  border-radius: 28px;
+  border: 1px solid #2a2a35;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+[data-bs-theme="dark"] .form-control-auth {
+  background-color: #25252e;
+  border: 1px solid #3a3a48;
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  color: #eef2ff;
+}
+[data-bs-theme="dark"] .form-control-auth:focus {
+  border-color: #5bb4d4;
+  box-shadow: 0 0 0 0.2rem rgba(91, 180, 212, 0.3);
+  outline: none;
+  background-color: #2c2c38;
+  color: white;
+}
+[data-bs-theme="dark"] .form-control-auth::placeholder {
+  color: #8f9bb3;
+}
+[data-bs-theme="dark"] .auth-title {
+  color: #5bb4d4;
+  font-weight: 700;
+}
+[data-bs-theme="dark"] .auth-link {
+  color: #6cb4d4;
+  text-decoration: none;
+  font-weight: 500;
+}
+[data-bs-theme="dark"] .auth-link:hover {
+  color: #9ad0e8;
+  text-decoration: underline;
+  background: none;
+}
+[data-bs-theme="dark"] .divider-custom {
+  background: linear-gradient(to right, #5bb4d4, #2c7a9e);
+  height: 3px;
+  width: 70px;
+  border-radius: 5px;
+}
+
+[data-bs-theme="dark"] a{
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+[data-bs-theme="dark"] .bg-primary {
+  background-color: #242424 !important;
+}
+[data-bs-theme="dark"] .bg-secondary {
+  background-color: #242424 !important;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  background-color: #378cb1;
+  color: #f5f5f5;
+  --bs-btn-border-color: #378cb1;
+  --bs-btn-hover-bg: #173b4b;
+  --bs-btn-hover-border-color: #173b4b;
+  --bs-btn-active-bg: #173b4b;
 }
