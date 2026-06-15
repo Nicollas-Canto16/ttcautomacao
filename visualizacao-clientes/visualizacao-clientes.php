@@ -5,6 +5,17 @@ include("../conexao.php");
 $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '';
 $status   = isset($_GET['status'])   ? $_GET['status']   : '';
 
+if (isset($_GET['excluir'])) {
+  $idExcluir = (int) $_GET['excluir'];
+  $stmtExcluir = mysqli_prepare($conn, "DELETE FROM clientes WHERE id_cliente = ?");
+  mysqli_stmt_bind_param($stmtExcluir, "i", $idExcluir);
+  mysqli_stmt_execute($stmtExcluir);
+
+  // Redireciona para a própria página sem o parâmetro 'excluir'
+  header("Location: visualizacao-clientes.php");
+  exit;
+}
+
 $sql = "SELECT c.id_cliente, c.nome_responsavel, c.nome_empresa, c.email, c.telefone,
                COALESCE(
                  (SELECT os.status FROM ordens_servico os
@@ -58,7 +69,7 @@ $total = mysqli_num_rows($resultado);
   <link rel="stylesheet" href="../shared/global.css">
   <link rel="stylesheet" href="clientes.css">
   <style>
-      /* === BODY === */
+    /* === BODY === */
     [data-bs-theme="light"] body {
       background-color: #f5f5f5;
     }
@@ -393,7 +404,7 @@ $total = mysqli_num_rows($resultado);
     document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("btnConfirmarExclusao").addEventListener("click", function() {
         const id = this.getAttribute("data-id");
-        window.location.href = "excluirCliente.php?id=" + id;
+        window.location.href = "visualizacao-clientes.php?excluir=" + id;
       });
     });
   </script>
